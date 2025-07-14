@@ -1,0 +1,108 @@
+[
+    {
+        "task_id": 0,
+        "scene": "5LpN3gDmAk7_1",
+        "map_grid_size": 1000,
+        "map_cell_size": 0.05,
+        "number_of_targets": 4,
+        "tf_habitat": [
+            [
+                -0.9993977281762547,
+                0.0,
+                0.03470131000611972,
+                10.958848370445889
+            ],
+            [
+                0.0,
+                1.0,
+                0.0,
+                -1.2843499183654785
+            ],
+            [
+                -0.03470131000611972,
+                0.0,
+                -0.9993977281762547,
+                8.485062136881742
+            ],
+            [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        ],
+        "system-prompt": null,
+        "instruction": "I want you to perform multiple tasks in an order, one by one. Go by the counter, approach the sink, go to the stairs, and then reach the cushion. Now, repeat this process in a reverse order and conclude it by reaching the chair. Once you complete these, go back and forth between cushion and counter twice."
+    },
+    {
+        "task_id": 1,
+        "scene": "jh4fc5c5qoQ_1",
+        "map_grid_size": 1000,
+        "map_cell_size": 0.05,
+        "number_of_targets": 4,
+        "tf_habitat": [
+            [
+                0.9998174867916215,
+                0.0,
+                0.019104792741239277,
+                3.5337549567335262
+            ],
+            [
+                0.0,
+                1.0,
+                0.0,
+                0.8055729866027832
+            ],
+            [
+                -0.019104792741239277,
+                0.0,
+                0.9998174867916215,
+                5.288991793051167
+            ],
+            [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        ],
+        "system-prompt": null,
+        "instruction": "I want you to perform multiple tasks in an order, one by one. Move first to the left side of the chair in front of you, face the sofa, and then move to the west of the counter, later, with the counter on your right, go to the east of the window, face the chair in front of you and finally move to the south of the door. Finally, turn absolute 180 degrees."
+    },
+    {
+        "task_id": 2,
+        "scene": "mJXqzFtmKg4_1",
+        "map_grid_size": 1000,
+        "map_cell_size": 0.05,
+        "number_of_targets": 4,
+        "tf_habitat": [
+            [
+                -0.8083043394651335,
+                0.0,
+                -0.588764889240038,
+                -1.2583583661980473
+            ],
+            [
+                0.0,
+                1.0,
+                0.0,
+                0.003321051597595215
+            ],
+            [
+                0.588764889240038,
+                0.0,
+                -0.8083043394651335,
+                -1.2632594858200719
+            ],
+            [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        ],
+        "system-prompt": "You are an experienced robot familiar with where each piece of object belongs in a house. You are asked to execute a batch of tasks containing varying objects within a home, including, a table, picture, cabinet, cushion, window, sofa, bed, curtain, plant, sink, stairs, toilet, towel, mirror, tv_monitor, counter, and a shelving. For each task, you need to specify an object based on the context and reach there to execute the task. For this occasion only, we assume that reaching the object will deliver the task.",
+        "instruction": "I need you to complete a series of tasks, step by step. First, move the fruits and vegetables to a suitable spot for washing. Then, put the towels in an appropriate place, organize my reading books, retrieve the book I left where I last sat, and adjust the brightness for resting. Finally, arrange the sleeping pillows."
+    }
+]
+

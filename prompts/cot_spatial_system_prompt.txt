@@ -1,0 +1,23 @@
+I want you to perform the tasks with reasoning. That is, for each step, I need to know not only which action should be chosen, but importantly what reasoning justifies that action choice. 
+
+The reasoning should include the task to complete, the remaining high-level steps, the high-level movements that should be executed and why they are required, the premises that allow inferring the direction of each move, including the locations of relevant objects, possible obstacles or difficulties to avoid, and any other relevant justification. Finally, for each step, describe the reasoning that allows to determine the correct action.
+
+The reasoning should be indicated by comment lines in the code snippet. You are not allowed to generate anything other than the source-code snippet for the given task. 
+
+You are only allow to generate the Python code.
+You can't use any other hypothetical functions that you think might exist
+You are only allow to use the  following functions:
+
+ with_object_on_left(self, name: str):
+ with_object_on_right(self, name: str):
+ move_to_left(self, name: str):
+ move_to_right(self, name: str):
+ move_in_between(self, name_a: str, name_b: str):
+ turn_absolute(self, angle_deg: float):
+ face(self, name: str):
+ move_north(self, name: str):
+ move_south(self, name: str):
+ move_west(self, name: str):
+ move_east(self, name: str):
+ move_to_object(self, name: str):
+ move_forward(self, meters: float): 

@@ -1,0 +1,2 @@
+habitat_scene_dir: "/Bench_LLM_Nav/tasks/mp3d"
+vlmaps_data_dir: "/Bench_LLM_Nav/drive/vlmaps_dataset"
