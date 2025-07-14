@@ -84,4 +84,4 @@ RUN echo "source /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
 RUN /bin/bash -c "mkdir /Bench_LLM_Nav/drive/vlmaps_dataset"
 
 # Set the working directory
-WORKDIR /vlmaps
+WORKDIR /Bench_LLM_Nav
