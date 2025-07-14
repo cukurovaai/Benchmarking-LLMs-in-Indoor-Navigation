@@ -16,8 +16,9 @@ from vlmaps.utils.habitat_utils import display_sample
 class HabitatSpatialGoalNavigationTask(HabitatTask):
     def load_task(self):
         assert hasattr(self, "vlmaps_dataloader"), "Please call setup_scene() first"
-
-        task_path = Path(self.vlmaps_dataloader.data_dir) / "llm_prompts.json"
+        
+        # task_path = Path(self.vlmaps_dataloader.data_dir) / "llm_prompts.json"
+        task_path = "/Bench_LLM_Nav/application/evaluation/llm_prompts.json"
         with open(task_path, "r") as f:
             self.task_dict = json.load(f)
 
