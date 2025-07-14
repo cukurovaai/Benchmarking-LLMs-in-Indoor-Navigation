@@ -60,7 +60,7 @@ RUN conda create -n bench_llm_nav python=3.8 -y
 
 # Clone vlmaps repository and set up
 RUN git clone https://github.com/cukurovaai/Benchmarking-LLMs-in-Indoor-Navigation.git /Bench_LLM_Nav
-RUN /bin/bash -c "source /opt/conda/etc/profile.d/conda.sh && conda activate bench_llm_nav && conda install jupyter -y && cd /vlmaps && python -m pip install --upgrade pip==24.0 && bash install.bash"
+RUN /bin/bash -c "source /opt/conda/etc/profile.d/conda.sh && conda activate bench_llm_nav && conda install jupyter -y && cd /bench_llm_nav && python -m pip install --upgrade pip==24.0 && bash install.bash"
 
 # Copy the Python script that downloads the episodes into the Docker image
 COPY ./download_mp.py /Bench_LLM_Nav/dataset/download_mp.py
