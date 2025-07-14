@@ -6,16 +6,16 @@ def read_system_prompt(goal):
     system_prompt = None
 
     if goal == "object":
-        with open("/vlmaps/prompts/object_system_prompt.txt", 'r') as f:
+        with open("/Bench_LLM_Nav/prompts/object_system_prompt.txt", 'r') as f:
             system_prompt = f.read()
     elif goal == "spatial":
-        with open("/vlmaps/prompts/spatial_system_prompt.txt", 'r') as f:
+        with open("/Bench_LLM_Nav/prompts/spatial_system_prompt.txt", 'r') as f:
             system_prompt = f.read()
     elif goal == "cot":
-        with open("/vlmaps/prompts/cot_spatial_system_prompt.txt", 'r') as f:
+        with open("/Bench_LLM_Nav/prompts/cot_spatial_system_prompt.txt", 'r') as f:
             system_prompt = f.read()
     elif goal == "reasoning":
-        with open("/vlmaps/prompts/reasoning_prompt.txt", 'r') as f:
+        with open("/Bench_LLM_Nav/prompts/reasoning_prompt.txt", 'r') as f:
             system_prompt = f.read()
     return system_prompt
 
