@@ -99,10 +99,10 @@ def parse_spatial_goal_instruction(language_instr, technique):
     # instructions_list = language_instr.split(",")
     instructions_list = [language_instr]
     
-    model = "anthropic/claude-3.5-sonnet"
+    model = "gpt-4o"
     results = ""
     for lang in instructions_list:
-        client = openai.OpenAI(api_key=openai_key, base_url="https://openrouter.ai/api/v1")
+        client = openai.OpenAI(api_key=openai_key)
         # if technique == "few-shot" or technique == 'reasoning':
         response = client.chat.completions.create(
         model=model,
@@ -111,7 +111,7 @@ def parse_spatial_goal_instruction(language_instr, technique):
             {"role": "assistant", "content": "robot.turn_absolute(-90)\nrobot.move_forward(3)"},
             {"role": "user", "content": lang},
             ],
-            stream=False
+            max_tokens=300,
         )
         """
         elif technique == "zero-shot" or technique == "chain-of-thought":
