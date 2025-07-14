@@ -1,1 +1,1 @@
-# Benchmarking-LLMs-in-Indoor-Navigation
+## Benchmarking Large Language Model Reasoning in Indoor Robot Navigation
