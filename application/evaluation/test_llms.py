@@ -368,7 +368,7 @@ def main(config: DictConfig) -> None:
         scene_ids = config.scene_id
    
     sim_setting =  {"color_sensor": True, "depth_sensor": None, "semantic_sensor": None}
-    custom_output_path = "/vlmaps/custom_output"
+    custom_output_path = "/Bench_LLM_Nav/custom_output"
     os.makedirs(custom_output_path, exist_ok=True)
     exp_count = len([name for name in os.listdir(custom_output_path) if os.path.isdir(os.path.join(custom_output_path, name))])
     exp_dir_name = f"exp_{exp_count + 1}"
