@@ -268,27 +268,8 @@ def display_sample(
     waitkey=True,
 ):
     from habitat_sim.utils.common import d3_40_colors_rgb
+    
     rgb_obs = np.array(rgb_obs[:, :, [2, 1, 0]])
-
-    # Ensure the "obs" folder exists
-    obs_folder = Path("/vlmaps/obs")
-    obs_folder.mkdir(exist_ok=True)
-    
-    if task == "spatial":
-    	section_folder = obs_folder / "spatial"
-    else:
-    	section_folder = obs_folder / "object"
-    section_folder.mkdir(exist_ok=True)
-	
-    task_folder = section_folder / f"task_{task_id}"
-    
-    # Count existing images in the task folder
-    existing_images = list(task_folder.glob("*.png"))
-    image_count = len(existing_images) + 1 # Add 1 for the new image
-
-    # Generate the new image filename
-    save_path = task_folder / f"observation_{image_count}.png"
-
     obs = rgb_obs / 255.0
     if depth_obs.shape[0] > 0:
         depth_obs_div_10 = np.repeat(depth_obs[:, :, None] / 10, 3, axis=2)
@@ -305,9 +286,6 @@ def display_sample(
     if obj2cls and semantic_obs.shape[0] > 0:
         obj_ids = np.unique(semantic_obs)
         cls_ids = [obj2cls.get(i) for i in obj_ids]
-
-    # Save the concatenated image to disk
-    cv2.imwrite(str(save_path), (obs * 255).astype(np.uint8))
 
     return None
 
