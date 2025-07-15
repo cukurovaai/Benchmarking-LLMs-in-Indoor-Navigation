@@ -1,6 +1,8 @@
 # Benchmarking Large Language Model Reasoning in Indoor Robot Navigation
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Static Badge](https://img.shields.io/badge/Project-Page-a)](https://cukurovaai.github.io/Bench-LLM-Nav/)
+[![Static Badge](https://img.shields.io/badge/Project-Poster-blue)](https://emirhanbalci.me/docs/SIU_Poster.pdf)
+[![Static Badge](https://img.shields.io/badge/Project-Video-orange)](https://youtu.be/ddHJjeE96u8)
 
 [Emirhan Balcı](https://emirhanbalci.me/), [Mehmet Sarıgül](http://mehmetsarigul.com/), [Barış Ata](https://barisata.me/)
 
@@ -13,3 +15,6 @@ This study evaluates the performance of state-of-the-art text-based generative l
 <p align="center">
   <img src="media/scheme_animated.gif" alt="Demo GIF" width="900">
 </p>
+
+## Acknowledgment
+This repository is primarily built upon [Visual Language Maps (VLMaps)](https://vlmaps.github.io/). We sincerely thank [Huang et al.](https://arxiv.org/pdf/2210.05714) for releasing their work as open-source.
