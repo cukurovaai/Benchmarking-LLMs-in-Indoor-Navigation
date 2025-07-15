@@ -43,3 +43,24 @@ To run the container with GUI and GPU support, use the following command:
 docker run -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/<your_username>/.Xauthority:/root/.Xauthority --net=host --ipc=host --runtime=nvidia --gpus all Bench_LLM_Nav
 ```
 
+# Usage
+...
+
+## Citation
+
+If you find the study or code useful, please cite:
+
+```bibtex
+@inproceedings{balci25benchmarking,
+          title={Benchmarking Large Language Model Reasoning in Indoor Robot Navigation},
+          author={Emirhan Balcı and Mehmet Sarıgül and Barış Ata},
+          booktitle = {Proceedings of the 33rd IEEE Conference on Signal Processing and Communications Applications (SIU)},
+          year={2025},
+          address = {Istanbul, TR}
+}
+```
+
+## License
+
+MIT License
+
