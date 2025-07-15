@@ -44,6 +44,45 @@ docker run -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/<yo
 ```
 
 # Usage
+
+## Generate RGB-D and Pose Data
+We used the RGB-D videos and pose information provided for 10 scenes by **VLMaps** in this experiment.
+
+To generate data for the predefined 10 scenes:
+```
+cd dataset
+# Generate RGB-D sequences of Matterport3D scenes with pose information
+python generate_dataset.py
+```
+
+To generate data beyond the predefined 10 scenes manually:
+- Open and edit `config/collect_dataset.yaml`:
+	- Set the `scene_names` variable to the desired scene name. (e.g `gTV8FGcVJC9`)
+
+- Then run:
+```
+cd dataset
+python collect_custom_dataset.py
+```
+
+The generated data will be stored under a folder named `<scene_name>_<id>` inside `/Bench_LLM_Nav/drive/vlmaps_dataset`. 
+
+## Generate Semantic Map
+Follow the commands below to generate the top-down semantic map for a given scene:
+```
+cd application/semantic
+python split_poses.py
+
+# Update the "data_dir" variable to the desired scene name (e.g., 'gTV8FGcVJC9')
+python semantic_map.py
+```
+
+After generating the semantic map, create the VLMap by running the following commands. This step constructs a 3D map in which each voxel contains the corresponding LSeg embedding.
+```
+cd ..
+python create_map
+```
+
 ...
 
 ## Citation
