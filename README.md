@@ -154,7 +154,7 @@ root directory
 </p>
 
 ## Evaluation
-Update the `reference_trajectory_path` and `predicted_trajectory_path` variable in the scripts under the `application/evaluation/` directory to point to the ground-truth and predicted trajectory files.
+Update the `reference_trajectory_path` and `predicted_trajectory_path` variables in the scripts under the `application/evaluation/` directory to point to the ground-truth and predicted trajectory files.
 The script evaluates the alignment between the two trajectories using SDTW, SR, NE, and CLS metrics.
 
 ```
@@ -163,12 +163,24 @@ cd application/evaluation
 python evaluation_metrics.py
 ```
 
-The reference trajectory can be obtained by manually collecting pose information running the `dataset/collect_custom_dataset.py` script.
+There are two ways to obtain reference trajectory data:
 
-```
-cd dataset
-python collect_custom_dataset.py
-```
+1. Manual Collection:<br>
+   Manually collect pose information by interacting with the environment and running the `collect_custom_dataset.py` script.
+   ```
+   cd dataset
+   python collect_custom_dataset.py
+   ```
+2. Scripted Tasks:<br>
+   Define a sequence of robot actions as task instructions (e.g., `robot.move_to_object('counter')`) and run the `collect_from_tasks.py` script.<br>
+   Update the `task_arr` list with robot function calls as defined in the [VLMaps](https://github.com/vlmaps/vlmaps/blob/master/vlmaps/robot/lang_robot.py) robot interface, for example:<br>
+   `task_arr = ["robot.with_object_on_left('counter')", "robot.move_east('window')"]`
+
+   Then run:
+   ```
+   cd application/evaluation
+   python collect_from_tasks.py
+   ```
 
 ## Citation
 
