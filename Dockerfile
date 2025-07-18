@@ -78,7 +78,7 @@ RUN /bin/bash -c "source /opt/conda/etc/profile.d/conda.sh && conda activate ben
 
 RUN echo "source /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo 'export PYTHONPATH="${PYTHONPATH}:/vlmaps/"' >> ~/.bashrc && \
-    echo 'export OPENAI_KEY="<your copied key>"' >> ~/.bashrc && \
+    echo 'export LLM_KEY="<your copied key>"' >> ~/.bashrc && \
     echo "conda activate bench_llm_nav" >> ~/.bashrc
 
 RUN /bin/bash -c "mkdir /Bench_LLM_Nav/drive/vlmaps_dataset"
