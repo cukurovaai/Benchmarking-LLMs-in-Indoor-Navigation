@@ -149,6 +149,10 @@ root directory
  ...
 ```
 
+<p align="center">
+  <img src="media/llm_output.gif" alt="Output GIF" width="900">
+</p>
+
 ## Citation
 
 If you find the study or code useful, please cite:
