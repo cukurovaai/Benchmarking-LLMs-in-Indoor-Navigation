@@ -153,6 +153,23 @@ root directory
   <img src="media/llm_output.gif" alt="Output GIF" width="900">
 </p>
 
+## Evaluation
+Update the `reference_trajectory_path` and `predicted_trajectory_path` variable in the scripts under the `application/evaluation/` directory to point to the ground-truth and predicted trajectory files.
+The script evaluates the alignment between the two trajectories using SDTW, SR, NE, and CLS metrics.
+
+```
+cd application/evaluation
+# update the path variables of trajectories
+python evaluation_metrics.py
+```
+
+The reference trajectory can be obtained by manually collecting pose information running the `dataset/collect_custom_dataset.py` script.
+
+```
+cd dataset
+python collect_custom_dataset.py
+```
+
 ## Citation
 
 If you find the study or code useful, please cite:
