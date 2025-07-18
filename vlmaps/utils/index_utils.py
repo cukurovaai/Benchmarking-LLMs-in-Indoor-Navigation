@@ -13,7 +13,7 @@ def find_similar_category_id_deprecate(class_name, classes_list):
         return classes_list.index(class_name)
     import openai
 
-    openai_key = os.environ["OPENAI_KEY"]
+    openai_key = os.environ["LLM_KEY"]
     openai.api_key = openai_key
     classes_list_str = ",".join(classes_list)
     question = f"""
