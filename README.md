@@ -83,7 +83,15 @@ cd ..
 python create_map
 ```
 
-...
+## Set Up LLM API Keys
+We focused on evaluating LLMs via API access in this study; thus, running local models is not supported in this project.
+
+To test navigation tasks using LLMs, follow these steps to configure your API key:
+1. Obtain an API key ([e.g., from OpenAI](https://platform.openai.com/account/api-keys)) and copy it.
+3. Open your `~/.bashrc` file and add the following line: `export LLM_KEY=<your copied key>`
+4. Save the file and run `source ~/.bashrc` to apply the changes.
+
+
 
 ## Citation
 
