@@ -91,7 +91,63 @@ To test navigation tasks using LLMs, follow these steps to configure your API ke
 3. Open your `~/.bashrc` file and add the following line: `export LLM_KEY=<your copied key>`
 4. Save the file and run `source ~/.bashrc` to apply the changes.
 
+## Set up Navigation Tasks
+To initialize the robot in a given scene, we first need to define its starting coordinates.
 
+1. Update the `scene_id` variable in the `config/test_config.yaml` file based on the target scene. (`scene_id` refers to the index of the scene in the `/drive/vlmaps_dataset/` directory)
+2. Run the following command to launch an interactive top-down visualization of the selected scene:
+```
+cd vlmaps/map/
+python interactive_map.py
+```
+3. To specify the robot’s initial pose, first click a point on the map to set its position. Then, click a second point to define its orientation.
+The script calculates the transformation matrix (`tf_hab`) based on the two selected positions. Save the resulting `tf_hab` output for future use.
+
+Update the `application/evaluation/llm_prompts.json` file:
+1. `task_id` represents the index of the tasks.
+2. `scene` update this variable based on the target scene name (e.g., `5LpN3gDmAk7_1`) 
+3. `tf_habitat`, update this variable for the target scene based on the collected pose information from the prior steps.
+4. `system_prompt`, define a system prompt if the target requires constraints of prior knowledge.
+5. `instruction`, define a navigation task based on the scene and the system prompt for the LLM to generate robot code.
+
+Then update the `parse_spatial_goal_instruction()` function in the `vlmaps/utils/llm_utils.py` file to match the API format of the target LLM. By default, the project uses OpenAI models for navigation tasks, as shown below:
+
+```python
+openai_key = os.environ["LLM_KEY"]
+openai.api_key = openai_key
+    
+model = "gpt-4o"
+results = ""
+for lang in instructions_list:
+    client = openai.OpenAI(api_key=openai_key)
+    response = client.chat.completions.create(
+    model=model,
+    messages=[
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": lang}],
+        max_tokens=300)
+```
+
+Finally, run `application/evaluation/test_llms.py` to execute the navigation tasks using LLMs. The output will be saved in the root directory of the repository as:
+```
+# The structure of the output file looks like this:
+root directory
+ |-custom_output
+ |   |-exp_1
+ |   |   |-rgb
+ |   |   |   |-frame_0001.png
+ |   |   |   |-frame_0002.png
+ |   |   |   |-...
+ |   |   |-trajectory
+ |   |   |   |-path_0.png
+ |   |   |   |-path_1.png
+ |   |   |   |-...
+ |   |   |-map.png
+ |   |   |-tasks.txt
+ |   |   |-poses.txt
+ |   |-exp_2
+ ...
+```
 
 ## Citation
 
