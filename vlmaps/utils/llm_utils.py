@@ -41,7 +41,7 @@ def parse_object_goal_instruction(language_instr, technique):
     import openai
 
     system_prompt = read_system_prompt("object")
-    openai_key = os.environ["OPENAI_KEY"]
+    openai_key = os.environ["LLM_KEY"]
     openai.api_key = openai_key
     client = openai.OpenAI(api_key=openai_key)
 
