@@ -641,7 +641,10 @@ class InteractiveMap:
     config_name="test_config.yaml",
 )
 def main(config: DictConfig) -> None:
-    data_dir = Path(config.data_paths.vlmaps_data_dir) / "vlmaps_dataset"
+    os.environ["MAGNUM_LOG"] = "quiet"
+    os.environ["HABITAT_SIM_LOG"] = "quiet"
+    
+    data_dir = Path(config.data_paths.vlmaps_data_dir)
     data_dirs = sorted([x for x in data_dir.iterdir() if x.is_dir()])
     interactive_map = InteractiveMap(data_dirs[config.scene_id], config.map_config)
     # obstacle_cropped = interactive_map.vlmaps_dataloader.get_obstacles_cropped()
@@ -651,11 +654,13 @@ def main(config: DictConfig) -> None:
         interactive_map.vlmaps_dataloader.rmin : interactive_map.vlmaps_dataloader.xmax + 1,
         interactive_map.vlmaps_dataloader.cmin : interactive_map.vlmaps_dataloader.ymax + 1,
     ]
-
+    coords = interactive_map.collect_map_positions(color_top_down)
     interactive_map.collect_map_positions(color_top_down)
-    tf_hab, agent_state = interactive_map.get_habitat_robot_state(interactive_map.coords[0], interactive_map.coords[1])
-    print("tf_hab: ", tf_hab)
-
+    
+    for i in range(len(coords)-1):
+        tf_hab, agent_state = interactive_map.get_habitat_robot_state(coords[i], coords[i+1])
+        print(f"tf_hab: {tf_hab}\n")
+        
 
 if __name__ == "__main__":
     main()
