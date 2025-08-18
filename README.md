@@ -1,8 +1,12 @@
 # Benchmarking Large Language Model Reasoning in Indoor Robot Navigation
+
+[![Static Badge](https://img.shields.io/badge/Paper-DOI-pink)](https://doi.org/10.1109/SIU66497.2025.11111749)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Static Badge](https://img.shields.io/badge/Project-Page-a)](https://cukurovaai.github.io/Bench-LLM-Nav/)
 [![Static Badge](https://img.shields.io/badge/Project-Poster-blue)](https://emirhanbalci.me/docs/SIU_Poster.pdf)
 [![Static Badge](https://img.shields.io/badge/Project-Video-orange)](https://youtu.be/ddHJjeE96u8)
+
+<b> Official implementation of our SIU 2025 [paper](https://doi.org/10.1109/SIU66497.2025.11111749). </b>
 
 [Emirhan Balcı](https://emirhanbalci.me/), [Mehmet Sarıgül](http://mehmetsarigul.com/), [Barış Ata](https://barisata.me/)
 
