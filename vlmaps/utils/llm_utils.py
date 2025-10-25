@@ -94,7 +94,7 @@ def parse_spatial_goal_instruction(language_instr, technique):
     else:
         system_prompt = read_system_prompt("spatial")
     
-    openai_key = os.environ["OPENAI_KEY"]
+    openai_key = os.environ["LLM_KEY"]
     openai.api_key = openai_key
     # instructions_list = language_instr.split(",")
     instructions_list = [language_instr]
