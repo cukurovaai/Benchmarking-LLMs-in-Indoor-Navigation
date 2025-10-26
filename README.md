@@ -38,7 +38,7 @@ Once both files are in place, build the Docker image with:
 
 ```bash
 # build the docker image
-docker build -t "Bench_LLM_Nav" .
+docker build -t "bench_llm_nav" .
 ```
 
 To run the container with GUI and GPU support, use the following command:
