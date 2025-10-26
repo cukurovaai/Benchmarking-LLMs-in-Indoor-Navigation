@@ -132,6 +132,8 @@ for lang in instructions_list:
         max_tokens=300)
 ```
 
+Update the `scene_id` field in `config/llm_navigation_cfg.yaml` to specify the desired scene. For multiple scenes, provide an array of indices, for example: `scene_id: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`.
+
 Finally, run `application/evaluation/test_llms.py` to execute the navigation tasks using LLMs. The output will be saved in the root directory of the repository as:
 ```
 # The structure of the output file looks like this:
