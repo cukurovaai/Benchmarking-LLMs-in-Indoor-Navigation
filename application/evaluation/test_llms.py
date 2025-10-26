@@ -352,7 +352,7 @@ def save_tasks(tasks, file_path):
 @hydra.main(
     version_base=None,
     config_path="../../config",
-    config_name="spatial_goal_navigation_cfg",
+    config_name="llm_navigation_cfg",
 )
 def main(config: DictConfig) -> None:
     os.environ["MAGNUM_LOG"] = "quiet"
